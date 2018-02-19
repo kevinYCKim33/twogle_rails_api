@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	Namespace :api do
-		Resources :tweets, except: [:new, :edit]
+	namespace :api do
+		resources :tweets, except: [:new, :edit]
 	end
-End
+end
