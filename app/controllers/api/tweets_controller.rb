@@ -10,7 +10,7 @@ class Api::TweetsController < ApplicationController
     begin
       @resp = Faraday.get 'https://api.twitter.com/1.1/search/tweets.json' do |req|
           req.params['q'] = search
-          req.params['result_type'] = 'mixed' #mixed, recent, popular
+          req.params['result_type'] = 'popular' #mixed, recent, popular
           req.params['count'] = 30 #doesn't work with popular
           req.params['tweet_mode'] = 'extended'
           req.headers['Content-Type'] = 'application/json'
@@ -29,4 +29,5 @@ class Api::TweetsController < ApplicationController
     end
     render json: @tweets
   end
+
 end #end class
