@@ -9,7 +9,7 @@ class Api::HeadlinesController < ApplicationController
     begin
       @resp = Faraday.get 'https://newsapi.org/v2/everything' do |req|
           req.params['q'] = CGI::escape(params[:search]) #url encode search query
-          req.params['apiKey'] = ENV['NEWS_API_KEY']
+          req.headers['X-Api-Key'] = ENV['NEWS_API_KEY']
           req.params['language'] = 'en'
           req.params['from'] = (Time.now - 1).utc.to_s.split(" ").first
           req.params['to'] = Time.now.utc.to_s.split(" ").first
