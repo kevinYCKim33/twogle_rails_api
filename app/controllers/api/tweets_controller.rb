@@ -6,6 +6,7 @@ class Api::TweetsController < ApplicationController
   end
 
   def load_tweets
+    binding.pry
     begin
       @resp = Faraday.get 'https://api.twitter.com/1.1/search/tweets.json' do |req|
           req.params['q'] = CGI::escape(params[:search])
