@@ -6,10 +6,9 @@ class Api::TweetsController < ApplicationController
   end
 
   def load_tweets
-    search = params[:search]
     begin
       @resp = Faraday.get 'https://api.twitter.com/1.1/search/tweets.json' do |req|
-          req.params['q'] = search
+          req.params['q'] = CGI::escape(params[:search])
           req.params['result_type'] = 'popular' #mixed, recent, popular
           req.params['count'] = 30 #doesn't work with popular
           req.params['tweet_mode'] = 'extended'

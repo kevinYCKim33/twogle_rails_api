@@ -8,17 +8,16 @@ class Api::HeadlinesController < ApplicationController
   def load_headlines
     begin
       @resp = Faraday.get 'https://newsapi.org/v2/everything' do |req|
-          req.params['q'] = CGI::escape(params[:search]) #url encode search query
           req.headers['X-Api-Key'] = ENV['NEWS_API_KEY']
+          req.params['q'] = CGI::escape(params[:search]) #url encode search query
           req.params['language'] = 'en'
           req.params['from'] = (Time.now - 1).utc.to_s.split(" ").first
           req.params['to'] = Time.now.utc.to_s.split(" ").first
-          # req.params['sources'] = 'fox-sports'
+          # req.params['sources'] = 'cnn'
           # req.options.timeout = 0
         end
         body = JSON.parse(@resp.body)
         if @resp.success?
-          # binding.pry
           @headlines = body["articles"]
         else
           @error = body["meta"]["errorDetail"]
