@@ -1,7 +1,7 @@
 class Api::SearchesController < ApplicationController
   def index
     # binding.pry
-    render json: Search.all
+    render json: Search.all.order(updated_at: 'DESC')
   end
 
   def create
