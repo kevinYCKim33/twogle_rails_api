@@ -6,6 +6,8 @@ class Api::SearchesController < ApplicationController
 
   def create
     search = Search.find_or_create_by(keywords: params["search"], search_url: CGI::escape(params[:search]))
+    search.hit_count += 1;
+    search.save
     render json: search
   end
 
