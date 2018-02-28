@@ -1,30 +1,13 @@
-# README
+# Twogle --API end
 
-Filler space for Twogle Rails API backend.
+This repo is the Rails API backend for Twogle.
 
-React Front-end can be found here:
+For the client-side-repo as well as installation and usage guide, click [here](https://github.com/kevinYCKim33/twogle_react_client)
 
-https://github.com/kevinYCKim33/twogle_react_client
+## Development
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Developed by Kevin Y. Kim
 
-Things you may want to cover:
+## Contributing
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Pull requests are welcome! Please follow the [Contributor's Code of Conduct](https://www.contributor-covenant.org/).
