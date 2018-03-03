@@ -1,3 +1,4 @@
+#deployed!
 class Api::HeadlinesController < ApplicationController
   def index
   end
