@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'localhost:3000' #['localhost:3000', 'twogle.herokuapp.com'] if you want to add heroku later
+    origins ['localhost:3000', 'twogle-herokuapp.com'] if you want to add heroku later
 
     resource '*',
       headers: :any,
